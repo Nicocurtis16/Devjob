@@ -1,13 +1,13 @@
-// app.component.ts
+// header.component.ts
 import { Component } from '@angular/core';
-import { ThemeService } from './theme.service';
+import { ThemeService } from '../theme.service'; // Update path if necessary
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
 })
-export class AppComponent {
+export class HeaderComponent {
   constructor(private themeService: ThemeService) {}
 
   // Toggle dark mode

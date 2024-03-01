@@ -1,0 +1,78 @@
+<div
+  [ngClass]="{
+    'light-mode': !isDarkModeEnabled(),
+    'dark-mode': isDarkModeEnabled()
+  }"
+  class="job-detail"
+>
+  <!-- Your job detail component content here -->
+
+  <div class="job-status">
+    <div
+      class="company-logo"
+      [style.background-color]="job?.logoBackground"
+      style="height: 140px; width: 140px; border-radius: 0px 0px 0px 6px"
+    >
+      <img
+        [src]="job?.logo"
+        [alt]="job?.company"
+        style="max-width: 100%; max-height: 100%; margin-top: 70px"
+      />
+    </div>
+    <div class="cente-titles">
+      <h2 id="company-title">{{ job?.company }}</h2>
+      <p id="company-com">{{ job?.company }}.com</p>
+    </div>
+
+    <button class="company-btn" (click)="openCompanyWebsite(job?.website)">
+      Company Site
+    </button>
+  </div>
+  <div class="job-des">
+    <div class="job-top">
+      <div class="top">
+        <div id="top-row">
+          <p>{{ job?.postedAt }}</p>
+          <p>. {{ job?.contract }}</p>
+        </div>
+        <p id="position">{{ job?.position }}</p>
+
+        <p id="location">{{ job?.location }}</p>
+      </div>
+
+      <button class="apply-btn" (click)="openApplyPage(job?.apply)">
+        Apply Here
+      </button>
+    </div>
+    <div class="descrip">
+      <p>{{ job?.description }}</p>
+    </div>
+    <div class="requirment">
+      <h3 id="req">Requirements</h3>
+      <p id="cont">{{ job?.role?.content }}</p>
+      <ul>
+        <li *ngFor="let requirement of job?.requirements?.items">
+          {{ requirement }}
+        </li>
+      </ul>
+    </div>
+    <div class="role">
+      <h3 id="req">What You Will Do</h3>
+      <p id="cont">{{ job?.role?.content }}</p>
+      <ol>
+        <li *ngFor="let roleItem of job?.role?.items">{{ roleItem }}</li>
+      </ol>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-in">
+      <div class="inner">
+        <p id="in-pos">{{ job?.position }}</p>
+        <p id="in-tit">So Digital Inc.</p>
+      </div>
+      <button class="apply-btn" (click)="openApplyPage(job?.apply)">
+        Apply Here
+      </button>
+    </div>
+  </div>
+</div>

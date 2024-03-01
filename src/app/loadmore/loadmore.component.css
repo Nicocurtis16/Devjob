@@ -1,0 +1,15 @@
+.loadpanel {
+  display: flex;
+  justify-content: center;
+
+  height: 10rem;
+  width: 100%;
+}
+.loadmore-btn {
+  margin-top: 3rem;
+  height: 48px;
+  width: 141px;
+  background-color: #5964e0;
+  border: none;
+  border-radius: 5px;
+}

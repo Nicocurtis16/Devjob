@@ -1,0 +1,102 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+/>
+<div class="find-panel">
+  <div
+    [ngClass]="{
+      'light-mode': !isDarkModeEnabled(),
+      'dark-mode': isDarkModeEnabled()
+    }"
+    class="search-area"
+  >
+    <div class="search-container">
+      <div class="search-logo">
+        <img src="../../../assets/desktop/icon-search.svg" alt="" />
+      </div>
+      <input
+        type="text"
+        placeholder="Filter by title, companies, expertise…"
+        class="search-input"
+        [(ngModel)]="filterTitle"
+      />
+    </div>
+    <div class="divider">
+      <div class="search-container">
+        <div class="search-logo">
+          <img src="../../../assets/desktop/icon-location.svg" alt="" />
+        </div>
+        <input
+          type="text"
+          placeholder="Filter by location…"
+          class="search-input1"
+          [(ngModel)]="filterLocation"
+        />
+      </div>
+    </div>
+    <div class="search-container1">
+      <div class="styled-checkbox-container">
+        <input
+          type="checkbox"
+          class="styled-checkbox"
+          [(ngModel)]="filterFullTime"
+          id="myCheckbox"
+        />
+        <div class="styled-checkbox-icon"></div>
+      </div>
+      <label for="myCheckbox" class="styled-checkbox-label">Full Time </label>
+      <button id="searchButton" (click)="filterCards()">Search</button>
+    </div>
+  </div>
+  <div class="mob-search">
+    <input
+      type="text"
+      placeholder="Filter by title…"
+      class="mob-search-title"
+      [(ngModel)]="filterTitle"
+    />
+    <div class="mob-filter" (click)="togglePopover()">
+      <img src="../../../assets/mobile/icon-filter.svg" alt="" />
+    </div>
+
+    <div
+      class="popover-container"
+      *ngIf="isPopoverVisible"
+      [style.left.px]="popoverLeft"
+      [style.top.px]="popoverTop"
+    >
+      <!-- Popover content -->
+      <div class="popover-content">
+        <div class="mob-location-con">
+          <div class="loc-logo">
+            <img src="../../../assets/desktop/icon-location.svg" alt="" />
+          </div>
+          <input
+            type="text"
+            placeholder="Filter by location…"
+            class="loc-input"
+            [(ngModel)]="filterLocation"
+          />
+        </div>
+
+        <div class="styled-checkbox-container">
+          <input
+            type="checkbox"
+            class="styled-checkbox"
+            [(ngModel)]="filterFullTime"
+            id="myCheckbox"
+          />
+
+          <label for="myCheckbox" class="styled-checkbox-label"
+            >Full Time
+          </label>
+          <button id="mob-searchButton" (click)="filterCards()">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mob-search-btn">
+      <img src="../../../assets/desktop/icon-search.svg" alt="" />
+    </div>
+  </div>
+</div>

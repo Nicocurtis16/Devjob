@@ -1,0 +1,289 @@
+.find-panel {
+  display: flex;
+  /* margin-top: -1rem; */
+  justify-content: center;
+}
+
+.search-container {
+  width: 312px;
+  margin-left: 2rem;
+  display: flex;
+  border: none;
+  box-shadow: 5px solid #5964e0;
+}
+.mob-search {
+  display: none;
+}
+.search-area {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+
+  width: 1110px;
+  height: 80px;
+  margin-top: -2.5rem;
+
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.search-input {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+  font-weight: regular;
+  border: none;
+  width: 268px;
+  outline: none;
+  caret-color: indigo;
+
+  /* padding-left: 0.5rem; */
+}
+.search-input1 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+  font-weight: regular;
+  border: none;
+  width: 200px;
+  outline: none;
+  /* padding-left: 0.5rem; */
+}
+.search-logo {
+  padding-right: 1rem;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  width: 22rem;
+  height: 100%;
+  border: none;
+  border-right: 1px solid #6e8098;
+  border-left: 1px solid #6e8098;
+  margin-left: 5rem;
+}
+/* CSS for the custom checkbox */
+.styled-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.styled-checkbox:checked {
+  background-color: #2196f3;
+  border-color: #2196f3;
+}
+
+.styled-checkbox:checked::before {
+  content: "\2713"; /* Unicode checkmark character */
+  display: block;
+  text-align: center;
+  color: white;
+}
+
+/* Style for the checkmark icon */
+.styled-checkbox-icon:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark icon when the checkbox is checked */
+.styled-checkbox:checked + .styled-checkbox-icon:after {
+  display: block;
+}
+
+/* Style for the checkmark icon */
+.styled-checkbox-icon:after {
+  left: 5px; /* Adjust as needed */
+  top: 2px; /* Adjust as needed */
+  width: 5px; /* Adjust as needed */
+  height: 10px; /* Adjust as needed */
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Style for the label */
+.styled-checkbox-label {
+  font-size: 16px;
+  color: #333; /* Default color */
+}
+
+/* Style for the label when the checkbox is checked */
+.styled-checkbox:checked + .styled-checkbox-icon + .styled-checkbox-label {
+  color: #009688; /* Custom color when checked */
+}
+
+#searchButton {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  width: 123px;
+  height: 48px;
+  margin-left: 2rem;
+  background-color: #5964e0;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+}
+.search-container1 {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin-left: 1.6rem;
+
+  display: flex;
+  align-items: center;
+}
+.dark-mode .search-area {
+  background-color: #19202d;
+}
+/* For tablets */
+@media (max-width: 1024px) {
+  .search-container1 {
+    display: flex;
+  }
+  .styled-checkbox-label {
+    display: flex;
+    margin-right: 5px;
+  }
+  #searchButton {
+    margin-right: 20px;
+  }
+  .search-area {
+    width: 689px;
+    height: 80px;
+  }
+  .styled-checkbox {
+    margin-left: -10px;
+  }
+  .search-container {
+    width: 147px;
+    /* background-color: #009688; */
+  }
+  .divider {
+    width: 15rem;
+  }
+  .search-container {
+    width: 147px;
+  }
+  #searchButton {
+    width: 80px;
+    height: 48px;
+  }
+  .search-input {
+    width: 169px;
+  }
+  .search-input1 {
+    width: 147px;
+  }
+  .styled-checkbox-label::after {
+    content: none !important; /* Remove the " Only" text */
+  }
+}
+/* For mobile devices */
+@media (max-width: 768px) {
+  .search-area {
+    width: 327px;
+    height: 80px;
+    display: none;
+  }
+  .mob-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 327px;
+    height: 80px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    margin-top: -40px;
+  }
+  .mob-search-title {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    border: none;
+    width: 200px;
+    outline: none;
+  }
+  .mob-search-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: #5964e0;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  /* Adjust styles as needed */
+  .popover-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Change to relative */
+    height: 100%;
+    width: 100%;
+    z-index: 1000;
+    background-color: white; /* Add background color */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .popover-container::after {
+    content: "";
+    position: absolute; /* Change to absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #6e8098;
+    opacity: 0.2;
+  }
+  .mob-location-con {
+    display: flex;
+    width: 169px;
+    height: 24px;
+  }
+  .loc-logo {
+    height: 24px;
+    width: 17px;
+  }
+  .loc-input {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    border: none;
+    width: 134px;
+    outline: none;
+    margin-left: 10px;
+  }
+  #mob-searchButton {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 279px;
+    height: 48px;
+    background-color: #5964e0;
+    color: #ffffff;
+    border-radius: 3px;
+    border: none;
+  }
+
+  .popover-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 327px;
+    height: 217px;
+    background-color: #ffffff;
+  }
+  .mob-check-in {
+    display: flex;
+  }
+}

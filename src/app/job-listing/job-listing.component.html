@@ -1,0 +1,46 @@
+<app-find></app-find>
+<div class="job-panel">
+  <div class="job-cont">
+    <div class="grid-container">
+      <div
+        [ngClass]="{
+          'my-class': true,
+          'light-mode': !isDarkModeEnabled(),
+          'dark-mode': isDarkModeEnabled()
+        }"
+        *ngFor="let job of filteredJobs.slice(0, displayedCards)"
+        class="card"
+      >
+        <div [routerLink]="['/job-description', job.id]">
+          <div
+            class="logo-wrapper"
+            [style.background-color]="job.logoBackground"
+          >
+            <img [src]="job.logo" [alt]="job.company" class="company-logo" />
+          </div>
+          <div
+            [ngClass]="{
+              'my-class': true,
+              'light-mode': !isDarkModeEnabled(),
+              'dark-mode': isDarkModeEnabled()
+            }"
+            class="card-content"
+          >
+            <div class="job-details">
+              <div class="job-sep">
+                <p id="pright">{{ job.postedAt }} . {{ job.contract }}</p>
+              </div>
+              <h3>{{ job.position }}</h3>
+              <p>{{ job.company }}</p>
+              <p id="location">{{ job.location }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="load-more-container">
+      <button class="load-more-button" (click)="loadMore()">Load More</button>
+    </div>
+  </div>
+</div>
+<app-find (filteredJobsEmitter)="filteredJobs = $event"></app-find>

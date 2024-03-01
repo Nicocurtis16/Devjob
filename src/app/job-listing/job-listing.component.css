@@ -1,0 +1,157 @@
+.job-panel {
+  display: flex;
+  justify-content: center;
+  height: 1132px;
+  width: 100%;
+  /* background-color: #c61616; */
+  margin-top: 5rem;
+}
+.job-cont {
+  height: 1132;
+  width: 1110px;
+  /* background-color: aqua; */
+}
+
+.card-content {
+  font-family: "Kumbh Sans", sans-serif;
+
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+.card-content p:nth-child(1) {
+  color: #6e8098;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#location {
+  font-family: "Kumbh Sans", sans-serif;
+
+  color: #5964e0;
+  margin-top: 2.5rem;
+  font-size: 14px;
+  font-weight: bold;
+}
+p {
+  font-family: "Kumbh Sans", sans-serif;
+
+  font-size: 16px;
+  color: #6e8098;
+}
+h3 {
+  font-size: 20px;
+}
+.card {
+  width: 350px;
+  height: 228px;
+  font-family: "Kumbh Sans", sans-serif;
+
+  background-color: #fff;
+
+  margin: 4px;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+}
+.card .light-mode {
+  background-color: #fff;
+  /* width: 350px;
+  height: 228px; */
+}
+.grid-container {
+  width: 350px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: minmax(100px, auto); /* Auto rows */
+  gap: 60px 20px; /* Gap between grid items */
+}
+
+.card {
+  /* border: 1px solid #ccc; */
+  padding: 10px;
+  border-radius: 5px;
+}
+.logo-wrapper {
+  margin-top: -2rem;
+  margin-left: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Set the width */
+  height: 50px; /* Set the height */
+  border-radius: 15px; /* Apply a circular shape */
+  overflow: hidden; /* Hide any overflow from child elements */
+}
+.job-sep {
+  display: flex;
+}
+#pright {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+h3 {
+  margin-bottom: 0.7rem;
+}
+.load-more-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  align-items: center; /* Vertically center the button */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.load-more-button {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #5964e0;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 48px;
+  width: 141px;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.load-more-button:hover {
+  background-color: #0056b3;
+}
+/* For tablets */
+@media (max-width: 1024px) {
+  .job-cont {
+    /* height: 1132; */
+    width: 689px;
+  }
+  .card {
+    width: 339px;
+    height: 228px;
+  }
+  .grid-container {
+    width: 339px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    grid-auto-rows: minmax(100px, auto); /* Auto rows */
+    gap: 50px 3px; /* Gap between grid items */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .job-cont {
+    /* height: 1132; */
+    width: 327px;
+  }
+  .card {
+    width: 327px;
+    height: 228px;
+  }
+  .grid-container {
+    width: 327px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 3 columns */
+    grid-auto-rows: minmax(100px, auto); /* Auto rows */
+  }
+}
