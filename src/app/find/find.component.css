@@ -56,23 +56,24 @@
   width: 22rem;
   height: 100%;
   border: none;
-  border-right: 1px solid #6e8098;
-  border-left: 1px solid #6e8098;
+  border-right: 1.5px solid #e4e1e1;
+  border-left: 1.5px solid #e4e1e1;
   margin-left: 5rem;
 }
 /* CSS for the custom checkbox */
 .styled-checkbox {
   appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ccc;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #f4f6f8;
+  background-color: #f4f6f8;
   border-radius: 3px;
   cursor: pointer;
 }
 
 .styled-checkbox:checked {
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: #5964e0;
+  border-color: #5964e0;
 }
 
 .styled-checkbox:checked::before {
@@ -83,11 +84,11 @@
 }
 
 /* Style for the checkmark icon */
-.styled-checkbox-icon:after {
+/* .styled-checkbox-icon:after {
   content: "";
   position: absolute;
   display: none;
-}
+} */
 
 /* Show the checkmark icon when the checkbox is checked */
 .styled-checkbox:checked + .styled-checkbox-icon:after {
@@ -107,6 +108,7 @@
 
 /* Style for the label */
 .styled-checkbox-label {
+  margin-left: 1rem;
   font-size: 16px;
   color: #333; /* Default color */
 }
@@ -123,11 +125,14 @@
   cursor: pointer;
   width: 123px;
   height: 48px;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
   background-color: #5964e0;
   color: #ffffff;
   border-radius: 3px;
   border: none;
+}
+#searchButton:hover {
+  background-color: #939bf4;
 }
 .search-container1 {
   font-family: "Kumbh Sans", sans-serif;

@@ -37,6 +37,9 @@
   border: none;
   /* margin-left: 55rem; */
 }
+.slider:hover:before {
+  background-color: #939bf4; /* Hover color */
+}
 .custom-img2 {
   /* margin-right: 13rem; */
   width: 18px; /* Set the desired width */
