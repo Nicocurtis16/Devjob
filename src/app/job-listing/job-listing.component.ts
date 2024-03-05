@@ -13,6 +13,10 @@ export class JobListingComponent implements OnInit {
   displayedCards = 12; // Track number of cards to display initially
   filteredJobs: any[] = []; // Add filteredJobs property
 
+  filterTitle: string = '';
+  filterLocation: string = '';
+  filterFullTime: boolean = false;
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -45,4 +49,73 @@ export class JobListingComponent implements OnInit {
   isDarkModeEnabled(): boolean {
     return this.themeService.darkModeEnabled;
   }
+
+  filterCards(eventData: {
+    filterTitle: string;
+    filterLocation: string;
+    filterFullTime: boolean;
+  }) {
+    if (
+      eventData.filterTitle ||
+      eventData.filterLocation ||
+      eventData.filterFullTime
+    ) {
+      this.filteredJobs = this.jobs.filter(
+        (item: {
+          company: string;
+          position: string;
+          location: string;
+          contract: string;
+        }) =>
+          (!eventData.filterTitle ||
+            (item.company &&
+              item.company
+                .toLowerCase()
+                .includes(eventData.filterTitle.toLowerCase())) ||
+            (item.position &&
+              item.position
+                .toLowerCase()
+                .includes(eventData.filterTitle.toLowerCase()))) &&
+          (!eventData.filterLocation ||
+            (item.location &&
+              item.location
+                .toLowerCase()
+                .includes(eventData.filterLocation.toLowerCase()))) &&
+          (!eventData.filterFullTime ||
+            (eventData.filterFullTime &&
+              item.contract &&
+              item.contract.toLowerCase() === 'full time'))
+      );
+
+      console.log(
+        'this method works!',
+        eventData.filterFullTime,
+        eventData.filterTitle
+      );
+    }
+  }
+
+  // filterCards() {
+  //   this.jobs = this.jobs.filter((job) => {
+  //     let match = true;
+  //     if (
+  //       this.filterTitle &&
+  //       job.title &&
+  //       !job.title.toLowerCase().includes(this.filterTitle.toLowerCase())
+  //     ) {
+  //       match = false;
+  //     }
+  //     if (
+  //       this.filterLocation &&
+  //       job.location &&
+  //       !job.location.toLowerCase().includes(this.filterLocation.toLowerCase())
+  //     ) {
+  //       match = false;
+  //     }
+  //     if (this.filterFullTime && job.contract !== 'Full Time') {
+  //       match = false;
+  //     }
+  //     return match;
+  //   });
+  //}
 }

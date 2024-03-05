@@ -7,7 +7,7 @@ import { ThemeService } from '../theme.service';
   templateUrl: './find.component.html',
   styleUrls: ['./find.component.css'],
 })
-export class FindComponent implements OnInit {
+export class FindComponent {
   filterTitle: string = '';
   filterLocation: string = '';
   filterFullTime: boolean = false;
@@ -16,55 +16,56 @@ export class FindComponent implements OnInit {
   popoverLeft: number = 0;
   popoverTop: number = 0;
   7;
-  @Output() filteredJobsEmitter = new EventEmitter<any[]>(); // Emit filtered jobs
+
+  filteredJob: any[] = [];
+  @Output() filteredJobsEmitter = new EventEmitter<{
+    filterTitle: string;
+    filterLocation: string;
+    filterFullTime: boolean;
+  }>(); // Emit filtered jobs
+
+  onSearchChange() {
+    const searchData = {
+      filterTitle: this.filterTitle,
+      filterLocation: this.filterLocation,
+      filterFullTime: this.filterFullTime,
+    };
+
+    this.filteredJobsEmitter.emit(searchData);
+  }
 
   constructor(
     private httpClient: HttpClient,
     private themeService: ThemeService
   ) {}
 
-  ngOnInit(): void {
-    this.httpClient.get<any[]>('assets/jobs.json').subscribe(
-      (data: any[]) => {
-        this.jobs = data; // Assign fetched data to jobs array
-        // Optionally, you can apply initial filtering if needed
-        this.filterCards();
-      },
-      (error) => {
-        console.error('Error fetching job data:', error);
-      }
-    );
-  }
-
   isDarkModeEnabled(): boolean {
     return this.themeService.darkModeEnabled;
   }
 
-  filterCards() {
-    const filteredJobs = this.jobs.filter((job) => {
-      let match = true;
-      if (
-        this.filterTitle &&
-        job.title &&
-        !job.title.toLowerCase().includes(this.filterTitle.toLowerCase())
-      ) {
-        match = false;
-      }
-      if (
-        this.filterLocation &&
-        job.location &&
-        !job.location.toLowerCase().includes(this.filterLocation.toLowerCase())
-      ) {
-        match = false;
-      }
-      if (this.filterFullTime && job.contract !== 'Full Time') {
-        match = false;
-      }
-      return match;
-    });
-
-    this.filteredJobsEmitter.emit(filteredJobs); // Emit filtered jobs
-  }
+  // filterCards() {
+  //   this.jobs = this.jobs.filter((job) => {
+  //     let match = true;
+  //     if (
+  //       this.filterTitle &&
+  //       job.title &&
+  //       !job.title.toLowerCase().includes(this.filterTitle.toLowerCase())
+  //     ) {
+  //       match = false;
+  //     }
+  //     if (
+  //       this.filterLocation &&
+  //       job.location &&
+  //       !job.location.toLowerCase().includes(this.filterLocation.toLowerCase())
+  //     ) {
+  //       match = false;
+  //     }
+  //     if (this.filterFullTime && job.contract !== 'Full Time') {
+  //       match = false;
+  //     }
+  //     return match;
+  //   });
+  //}
 
   togglePopover() {
     this.isPopoverVisible = !this.isPopoverVisible;
