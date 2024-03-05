@@ -101,4 +101,49 @@
       <img src="../../../assets/desktop/icon-search.svg" alt="" />
     </div>
   </div>
+  <div
+    [ngClass]="{
+      'light-mode': !isDarkModeEnabled(),
+      'dark-mode': isDarkModeEnabled()
+    }"
+    class="tab-search-area"
+  >
+    <div class="search-container">
+      <div class="search-logo">
+        <img src="../../assets/desktop/icon-search-btnn.svg" alt="" />
+      </div>
+      <input
+        type="text"
+        placeholder="Filter by title…"
+        class="search-input"
+        [(ngModel)]="filterTitle"
+      />
+    </div>
+    <div class="divider">
+      <div class="search-container">
+        <div class="search-logo">
+          <img src="../../../assets/desktop/icon-location.svg" alt="" />
+        </div>
+        <input
+          type="text"
+          placeholder="Filter by location…"
+          class="search-input1"
+          [(ngModel)]="filterLocation"
+        />
+      </div>
+    </div>
+    <div class="search-container1">
+      <div class="styled-checkbox-container">
+        <input
+          type="checkbox"
+          class="styled-checkbox"
+          [(ngModel)]="filterFullTime"
+          id="myCheckbox"
+        />
+        <div class="styled-checkbox-icon"></div>
+      </div>
+      <label for="myCheckbox" class="styled-checkbox-label">Full Time </label>
+      <button id="searchButton" (click)="onSearchChange()">Search</button>
+    </div>
+  </div>
 </div>

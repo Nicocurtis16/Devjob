@@ -146,9 +146,73 @@
 .dark-mode .search-area {
   background-color: #19202d;
 }
+.tab-search-area {
+  display: none;
+}
 /* For tablets */
 @media (max-width: 1024px) {
-  .search-container1 {
+  .search-area {
+    display: none;
+  }
+  .tab-search-area {
+    visibility: visible;
+    display: flex;
+
+    align-items: center;
+
+    width: 689px;
+    height: 80px;
+    margin-top: -2.5rem;
+    /* border: 1px solid red; */
+
+    border-radius: 6px;
+    background-color: #ffffff;
+  }
+  .search-input {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    border: none;
+    width: 104px;
+    outline: none;
+    caret-color: indigo;
+
+    /* border: 1px solid red; */
+  }
+  .search-input1 {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 16px;
+    font-weight: regular;
+    border: none;
+    width: 134px;
+    outline: none;
+    /* border: 1px solid red; */
+  }
+  .search-container {
+    width: 170px;
+    /* border: 1px solid red; */
+  }
+  .divider {
+    margin: 0;
+    width: 230px;
+  }
+  #searchButton {
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80px;
+    height: 48px;
+    margin-left: 1.5rem;
+    background-color: #5964e0;
+    color: #ffffff;
+    border-radius: 3px;
+    border: none;
+  }
+  /* .search-container1 {
+    margin: 0;
+  } */
+  /* .search-container1 {
     display: flex;
   }
   .styled-checkbox-label {
@@ -168,7 +232,7 @@
   .search-container {
     width: 147px;
     /* background-color: #009688; */
-  }
+  /* }
   .divider {
     width: 15rem;
   }
@@ -186,11 +250,13 @@
     width: 147px;
   }
   .styled-checkbox-label::after {
-    content: none !important; /* Remove the " Only" text */
-  }
+    content: none !important;  */
 }
 /* For mobile devices */
 @media (max-width: 768px) {
+  .tab-search-area {
+    display: none;
+  }
   .search-area {
     width: 327px;
     height: 80px;
