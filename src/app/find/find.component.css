@@ -295,25 +295,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Change to relative */
-    height: 100%;
+    position: absolute; /* Change to relative */
+    background-color: rgba(0, 0, 0, 0.1);
+
     width: 100%;
-    z-index: 1000;
-    background-color: white; /* Add background color */
+    height: 100%;
+    /* z-index: 1000; */
     border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
   }
 
-  .popover-container::after {
-    content: "";
-    position: absolute; /* Change to absolute */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #6e8098;
-    opacity: 0.2;
-  }
   .mob-location-con {
     display: flex;
     width: 169px;
@@ -346,15 +337,43 @@
   }
 
   .popover-content {
+    border-radius: 6px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    /* align-items: center; */
     width: 327px;
     height: 217px;
     background-color: #ffffff;
   }
   .mob-check-in {
     display: flex;
+  }
+  .search-container {
+    align-items: center;
+    /* justify-content: center; */
+    display: flex;
+    width: 100%;
+    height: 40%;
+    /* background-color: #009688; */
+    margin-left: -1px;
+    /* border: 1px solid red; */
+    border-bottom: 0.8px solid #9daec2;
+  }
+  /* .styled-checkbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px;
+    height: 24px;
+    border: 1px solid red;
+  } */
+  .search-logo {
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    height: 24px;
+    /* border: 1px solid red; */
+    margin-left: 20px;
   }
 }

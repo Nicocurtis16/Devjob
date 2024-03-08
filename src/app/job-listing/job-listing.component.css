@@ -140,6 +140,12 @@ h3 {
 
 /* For mobile devices */
 @media (max-width: 768px) {
+  .tab-search-area {
+    display: none;
+  }
+  .search-area {
+    display: none;
+  }
   .job-cont {
     /* height: 1132; */
     width: 327px;

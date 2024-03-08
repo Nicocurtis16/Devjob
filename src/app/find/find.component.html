@@ -50,7 +50,13 @@
       <button id="searchButton" (click)="onSearchChange()">Search</button>
     </div>
   </div>
-  <div class="mob-search">
+  <div
+    [ngClass]="{
+      'light-mode': !isDarkModeEnabled(),
+      'dark-mode': isDarkModeEnabled()
+    }"
+    class="mob-search"
+  >
     <input
       type="text"
       placeholder="Filter by title…"
@@ -69,30 +75,32 @@
     >
       <!-- Popover content -->
       <div class="popover-content">
-        <div class="mob-location-con">
-          <div class="loc-logo">
+        <div class="search-container">
+          <div class="search-logo">
             <img src="../../../assets/desktop/icon-location.svg" alt="" />
+            <input
+              type="text"
+              placeholder="Filter by location…"
+              class="search-input1"
+              [(ngModel)]="filterLocation"
+            />
           </div>
-          <input
-            type="text"
-            placeholder="Filter by location…"
-            class="loc-input"
-            [(ngModel)]="filterLocation"
-          />
         </div>
 
-        <div class="styled-checkbox-container">
-          <input
-            type="checkbox"
-            class="styled-checkbox"
-            [(ngModel)]="filterFullTime"
-            id="myCheckbox"
-          />
+        <div class="search-container1">
+          <div class="styled-checkbox-container">
+            <input
+              type="checkbox"
+              class="styled-checkbox"
+              [(ngModel)]="filterFullTime"
+              id="myCheckbox"
+            />
+            <label for="myCheckbox" class="styled-checkbox-label"
+              >Full Time
+            </label>
+          </div>
 
-          <label for="myCheckbox" class="styled-checkbox-label"
-            >Full Time
-          </label>
-          <button id="mob-searchButton" (click)="filterCards()">Search</button>
+          <button id="searchButton" (click)="onSearchChange()">Search</button>
         </div>
       </div>
     </div>
@@ -101,6 +109,7 @@
       <img src="../../../assets/desktop/icon-search.svg" alt="" />
     </div>
   </div>
+
   <div
     [ngClass]="{
       'light-mode': !isDarkModeEnabled(),
